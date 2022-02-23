@@ -87,9 +87,19 @@ E. F. 커드는 자료에서 중복을 제거할 목적으로 관계형 데이�
  * 참고
     - https://sosimhan-dev.tistory.com/4
     - https://lordofkangs.tistory.com/m/127
-- SRP(Single Responsibility Principle) (p.47)
-- OCP(Open Close Principle) (p.48)
-- 추상 팩토리(ABSTRACT FACTRORY) (p.48)
-- 시간적인 결합(temporal coupling) (p.55)
-- 순서 종속성(order dependency) (p.55)
-- 의존성 자석(magnet)
+- SRP(Single Responsibility Principle) (p.47) : 단일 책임 원칙. 
+  "클래스는 단 한 개의 책임을 가져야 한다." 
+  클래스가 여러 책임을 갖게 되면 그 클래스는 각 책임마다 변경되는 이유가 발생하기 때문에 클래스가 한 개의 이유로만 변경되려면 클래스는 한 개의 책임만을 가져야 한다고 한다. 
+  이러한 이유로 이 원칙은 다른 말로 "클래스를 변경하는 이유는 단 한 개여야 한다."고도 표현한다.
+  * 참고 - https://velog.io/@gooreum_90/SRP%EB%8B%A8%EC%9D%BC-%EC%B1%85%EC%9E%84-%EC%9B%90%EC%B9%99
+- OCP(Open Close Principle) (p.48) - 소프트웨어 엔티티(클래스, 모듈, 함수 등)는 확장에 대해서는 열려 있어야 하지만 변경에 대해서는 닫혀 있어야 한다. 즉, 자신의 확장에는 열려있고, 주변의 변화에 대해서는 닫혀 있어야 한다는 것이다. 이것은 interface를 통해 구현하여 해결한다.
+
+- 추상 팩토리(ABSTRACT FACTRORY) (p.48) : 서로 관련이 있는 객체들을 묶어 팩토리 클래스로 만들고, 팩토리를 조건에 따라 생성하도록 다시 팩토리를 만들어서 객체를 생성하는 패턴?
+  * 참고 - https://victorydntmd.tistory.com/300
+
+- 때로는 예상치 못하게 클래스 변수를 수정한다. 때로는 함수로 넘어온 인수나 시스템 전역 변수를 수정한다. 어느 쪽이든 교활하고 해로운 거짓말이다. 많은 경우 시간적인 결합이나 순서 종속성을 초래한다. (p.55)
+  - 시간적인 결합(temporal coupling)  - 시간을 수반하는 프로그램 또는 시스템 구성 요소 사이의 다양한 의존성을 의미. 시간 측면에서의 결합.  
+  - 순서 종속성(order dependency) - https://docs.oracle.com/cd/E19120-01/open.solaris/819-0690/chapter4-49986/index.html  
+  -> 메서드는 언제나 반드시 메서드 B보다 먼저 호출해야 한다. 보고서는 한 번에 오직 하나만 실행될 수 있다. 버튼 클릭을 처리하려면 먼저 화면이 갱신되어야 한다.
+
+- 의존성 자석(magnet) : 붙이기는 쉬운데 떼어낼려면 고생해야 한다는 뜻. 많은 곳에서 참조하는 어떤 구조.
