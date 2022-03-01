@@ -57,9 +57,9 @@
   - 위 예제가 디미터 법칙을 위반하는지 여부는 ctxt, opts, scratchDir이 객체인지 아니면 자료구조인지에 달렸다. 객체라면 내부 구조를 숨겨야 하므로 확실히 디미터 법칙을 위반한다.  
 반면, 자료 구조라면 당연히 내부 구조를 노출하므로 디미터 법칙이 적용되지 않는다.  
 그런데, 위 예제는 조회 함수를 사용하는 바람에 혼란을 일으킨다. 코드를 다음과 같이 구현했다면 디미터 법칙을 거론할 필요가 없어진다.
-```java
-  final String outputDir = ctxt.options.scratchDir.absolutePath;
-```
+  ```java
+    final String outputDir = ctxt.options.scratchDir.absolutePath;
+  ```
   - 자료 구조는 무조건 함수 없이 공개 변수만 포함하고 객체는 비공개 변수와 공개 함수를 포함한다면, 문제는 훨씬 간단하리라.  
 하지만 단순한 자료 구조에도 조회 함수와 설정 함수를 정의할 요구하는 프레임워크와 표준(예, '빈(bean)')이 존재한다.
 
